@@ -1,5 +1,3 @@
-all: release
-
 WEBSITE_ROOT = ../sites/website
 
 build:
@@ -10,4 +8,4 @@ build:
 release: build
 	@(git add . && git commit -m "Update docs." && git push origin main)
 
-.PHONY: all build release
+.PHONY: build release
