@@ -1,0 +1,1 @@
+/home/muji/.uwe/plugins/std::sidebar::1.0.1/scripts/sidebar.js

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Query</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-security-policy" content="default-src data: &#x27;self&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Fetch data from an index">
+<meta name="commit" content="45fb088770d733d84a4bfc2fa5f5b8a5c5252aa8">
+<meta name="generator" content="uwe/0.42.4">
+<meta name="version" content="1.0.0">
+<meta name="author" content="Muji (https://tmpfs.org/)">
+<meta property="og:description" content="Fetch data from an index">
+<meta property="og:image" content="http://localhost:8888/assets/img/social.jpg">
+<meta property="og:site_name" content="UWE / Universal Web Editor">
+<meta property="og:title" content="Query">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:8888/docs/collections/query/">
+<link rel="stylesheet" href="../../../assets/plugins/std::core/styles/standard.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::crumbtrail/styles/crumbtrail.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::sidebar/styles/sidebar.css">
+<link rel="stylesheet" href="../../../assets/plugins/font::inter::regular/plugins/regular/styles/fonts.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::menu/styles/menu.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::note/styles/note.css">
+<link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAAAAACwAAAAAAQABAAACASgAOw==">
+<link rel="stylesheet" href="../../../assets/styles/main.css">
+<link rel="manifest" href="../../../app.webmanifest">
+<link rel="canonical" href="http://localhost:8888/docs/collections/query/">
+
+</head>
+<body>
+<input id="sidebar-toggle" type="checkbox" >
+<aside id="sidebar" >
+<header>
+  <a href="../../" title="Home">Home</a>
+  <label for="sidebar-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </label>
+</header>
+<nav>
+<p><a href="../../getting-started/" title="Getting Started">Getting Started</a></p>
+<ul><li><a href="../../getting-started/new-project/" title="New Project">New Project</a></li>
+<li><a href="../../getting-started/build-project/" title="Build Project">Build Project</a></li>
+<li><a href="../../getting-started/site-settings/" title="Site Settings">Site Settings</a></li>
+<li><a href="../../getting-started/live-reload/" title="Live Reload">Live Reload</a></li>
+<li><a href="../../getting-started/adding-pages/" title="Adding Pages">Adding Pages</a></li>
+<li><a href="../../getting-started/front-matter/" title="Front Matter">Front Matter</a></li>
+<li><a href="../../getting-started/links/" title="Links">Links</a></li>
+<li><a href="../../getting-started/content/" title="Content">Content</a></li>
+<li><a href="../../getting-started/styles/" title="Styles">Styles</a></li>
+<li><a href="../../getting-started/scripts/" title="Scripts">Scripts</a></li>
+<li><a href="../../getting-started/layouts/" title="Layouts">Layouts</a></li>
+<li><a href="../../getting-started/integrations/" title="Integrations">Integrations</a></li>
+<li><a href="../../getting-started/web-manifest/" title="Web Manifest">Web Manifest</a></li>
+<li><a href="../../getting-started/debugging/" title="Debugging">Debugging</a></li>
+<li><a href="../../getting-started/conventions/" title="Conventions">Conventions</a></li>
+<li><a href="../../getting-started/directory-listing/" title="Directory Listing">Directory Listing</a></li>
+<li><a href="../../getting-started/publish/" title="Publish">Publish</a></li>
+<li><a href="../../getting-started/powered-by/" title="Powered By">Powered By</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../navigation/" title="Navigation">Navigation</a></p>
+<ul><li><a href="../../navigation/defining-menus/" title="Defining Menus">Defining Menus</a></li>
+<li><a href="../../navigation/rendering-menus/" title="Rendering Menus">Rendering Menus</a></li>
+<li><a href="../../navigation/next-previous/" title="Next / Previous Links">Next / Previous Links</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../pages/" title="Pages">Pages</a></p>
+<ul><li><a href="../../pages/combining-pages/" title="Combining Pages">Combining Pages</a></li>
+<li><a href="../../pages/removing-pages/" title="Removing Pages">Removing Pages</a></li>
+<li><a href="../../pages/drafts/" title="Drafts">Drafts</a></li>
+<li><a href="../../pages/redirects/" title="Redirects">Redirects</a></li>
+<li><a href="../../pages/clean-urls/" title="Clean URLs">Clean URLs</a></li>
+<li><a href="../../pages/trailing-slash/" title="Trailing Slash">Trailing Slash</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../content/" title="Content">Content</a></p>
+<ul><li><a href="../../content/author-attribution/" title="Author Attribution">Author Attribution</a></li>
+<li><a href="../../content/reading-time/" title="Reading Time">Reading Time</a></li>
+<li><a href="../../content/feeds/" title="Feeds">Feeds</a></li>
+<li><a href="../../content/syntax-highlight/" title="Syntax Highlight">Syntax Highlight</a></li>
+<li><a href="../../content/edit-on-github/" title="Edit On Github">Edit On Github</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../plugins/" title="Plugins">Plugins</a></p>
+<ul><li><a href="../../plugins/dependencies/" title="Dependencies">Dependencies</a></li>
+<li><a href="../../plugins/apply/" title="Apply">Apply</a></li>
+<li><a href="../../plugins/using-templates/" title="Using Templates">Using Templates</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../design-patterns/" title="Design Patterns">Design Patterns</a></p>
+<ul><li><a href="../../design-patterns/sidebar/" title="Sidebar Menu">Sidebar Menu</a></li>
+<li><a href="../../design-patterns/crumbtrails/" title="Crumbtrails">Crumbtrails</a></li>
+<li><a href="../../design-patterns/table-of-contents/" title="Table Of Contents">Table Of Contents</a></li>
+<li><a href="../../design-patterns/sticky-header/" title="Sticky Header">Sticky Header</a></li>
+<li><a href="../../design-patterns/notes/" title="Notes">Notes</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../search-engines/" title="Search Engines">Search Engines</a></p>
+<ul><li><a href="../../search-engines/no-index/" title="No Index">No Index</a></li>
+<li><a href="../../search-engines/robots/" title="Robots">Robots</a></li>
+<li><a href="../../search-engines/site-maps/" title="Site Maps">Site Maps</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../translate/" title="Translate">Translate</a></p>
+<ul><li><a href="../../translate/introduction/" title="Introduction">Introduction</a></li>
+<li><a href="../../translate/languages/" title="Languages">Languages</a></li>
+<li><a href="../../translate/messages/" title="Messages">Messages</a></li>
+<li><a href="../../translate/pages/" title="Pages">Pages</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../publish/" title="Publish">Publish</a></p>
+<ul><li><a href="../../publish/self-hosting/" title="Self Hosting">Self Hosting</a></li>
+<li><a href="../../publish/amazon-web-services/" title="Amazon Web Services">Amazon Web Services</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../other/" title="Other Topics">Other Topics</a></p>
+<ul><li><a href="../../other/workspaces/" title="Workspaces">Workspaces</a></li>
+<li><a href="../../other/profiles/" title="Profiles">Profiles</a></li>
+<li><a href="../../other/hooks/" title="Hooks">Hooks</a></li>
+<li><a href="../../other/content-security-policy/" title="Content Security Policy">Content Security Policy</a></li>
+<li><a href="../../other/json-templates/" title="JSON Templates">JSON Templates</a></li>
+<li><a href="../../other/link-catalog/" title="Link Catalog">Link Catalog</a></li>
+<li><a href="../../other/ignores/" title="Ignores">Ignores</a></li>
+<li><a href="../../other/error-page/" title="Error Page">Error Page</a></li>
+<li><a href="../../other/strict-mode/" title="Strict Mode">Strict Mode</a></li>
+<li><a href="../../other/parallel-builds/" title="Parallel Builds">Parallel Builds</a></li>
+<li><a href="../../other/ssl-certificates/" title="SSL Certificates">SSL Certificates</a></li>
+</ul>
+</nav>
+<nav>
+<p><a href="../../reference/" title="Reference">Reference</a></p>
+<ul><li><a href="../../reference/helpers/" title="Helpers">Helpers</a></li>
+<li><a href="../../reference/settings/" title="Settings">Settings</a></li>
+<li><a href="../../reference/commands/" title="Commands">Commands</a></li>
+</ul>
+</nav>
+
+</aside>
+<main>
+<header>
+  <a href="../../" title="Home">UWE</a>
+  <label for="sidebar-toggle">
+  <span>Menu</span>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
+  </label>
+</header>
+<article>
+<h1 id="query">Query</h1>
+<nav class="crumbtrail">
+<a href="../../../" title="Universal Web Editor">Home</a><a href="../../" title="Documentation and developer reference">Documentation</a><a href="../" title="Create pages from data sources">Collections</a>Query</nav>
+<p>Queries extract data from the generator indices and expose them to page templates. To define a query set the <code>query</code> field for a page in <code>data.toml</code>; it may be a single object or array of objects when you need multiple queries for a page.</p>
+<p>At a minimum you should specify the generator <code>name</code> and the <code>index</code> for a page:</p>
+<pre><code><span style="color:#268bd2;">query </span><span style="color:#657b83;">= {</span><span style="color:#268bd2;">name </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">quotes</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">index </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">all</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">}
+</span></code></pre>
+<p>Which will expose the data using the default parameter <code>documents</code>. The returned data has an <code>id</code> and a <code>key</code>:</p>
+<pre><code><span style="color:#657b83;">{
+</span><span style="color:#657b83;">  </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">documents</span><span style="color:#839496;">&quot; </span><span style="color:#657b83;">: [{
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">id</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">document-identifier</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">key</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">document-identifier</span><span style="color:#839496;">&quot;
+</span><span style="color:#657b83;">  }]
+</span><span style="color:#657b83;">}
+</span></code></pre>
+<h3 id="parameter">Parameter</h3>
+<p>If you want to change the name of the parameter exposed to your template use the <code>parameter</code> option:</p>
+<pre><code><span style="color:#268bd2;">query </span><span style="color:#657b83;">= {</span><span style="color:#268bd2;">name </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">quotes</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">index </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">all</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">parameter </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">ids</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">}
+</span></code></pre>
+<h3 id="include-docs">Include Docs</h3>
+<p>Use the <code>include_docs</code> flag to also included the documents referenced by the index:</p>
+<pre><code><span style="color:#268bd2;">query </span><span style="color:#657b83;">= {</span><span style="color:#268bd2;">name </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">quotes</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">index </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">all</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">include_docs </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true</span><span style="color:#657b83;">}
+</span></code></pre>
+<p>Now the returned data has a <code>value</code> field containing the <code>document</code> and it's <code>id</code>:</p>
+<pre><code><span style="color:#657b83;">{
+</span><span style="color:#657b83;">  </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">documents</span><span style="color:#839496;">&quot; </span><span style="color:#657b83;">: [{
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">id</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">document-identifier</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">key</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">document-identifier</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">value</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: {
+</span><span style="color:#657b83;">      </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">document</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: {},
+</span><span style="color:#657b83;">      </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">id</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">document-identifier</span><span style="color:#839496;">&quot;
+</span><span style="color:#657b83;">    }
+</span><span style="color:#657b83;">  }]
+</span><span style="color:#657b83;">}
+</span></code></pre>
+<p>If you are wondering why there is so much duplication the answer is because we are operating on the <code>all</code> index. When we use a custom index to operate on the document fields we might use a query like:</p>
+<pre><code><span style="color:#268bd2;">query </span><span style="color:#657b83;">= {</span><span style="color:#268bd2;">name </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">quotes</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">index </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">tags</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">include_docs </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true</span><span style="color:#657b83;">}
+</span></code></pre>
+<p>Which might yield a result like this:</p>
+<pre><code><span style="color:#657b83;">{
+</span><span style="color:#657b83;">  </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">documents</span><span style="color:#839496;">&quot; </span><span style="color:#657b83;">: [{
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">id</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">life</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">key</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">Life</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">value</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: {
+</span><span style="color:#657b83;">      </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">document</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: {
+</span><span style="color:#657b83;">        </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">tags</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">Life</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">Embrace</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
+</span><span style="color:#657b83;">      },
+</span><span style="color:#657b83;">      </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">id</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">: </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">embrace-life</span><span style="color:#839496;">&quot;
+</span><span style="color:#657b83;">    }
+</span><span style="color:#657b83;">  }]
+</span><span style="color:#657b83;">}
+</span></code></pre>
+<h3 id="each">Each</h3>
+<p>The <code>each</code> flag asks for a page to be generated for every document in the query result:</p>
+<pre><code><span style="color:#268bd2;">query </span><span style="color:#657b83;">= {</span><span style="color:#268bd2;">name </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">quotes</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">index </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">all</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">each </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">include_docs </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true</span><span style="color:#657b83;">}
+</span></code></pre>
+<p>The page template is passed a <code>value</code> which contains the underlying <code>document</code> and it's <code>id</code>. You can change the <code>value</code> field to another name using the <code>parameter</code> option if you want something more relevant to the template.</p>
+<h3 id="keys">Keys</h3>
+<p>The <code>keys</code> flag returns a list of the keys for an index:</p>
+<pre><code><span style="color:#268bd2;">query </span><span style="color:#657b83;">= {</span><span style="color:#268bd2;">name </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">quotes</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">index </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">tags</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">keys </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true</span><span style="color:#657b83;">}
+</span></code></pre>
+<p>Yields:</p>
+<pre><code><span style="color:#657b83;">[
+</span><span style="color:#657b83;">  </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">Tag 1</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">  </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">Tag 2</span><span style="color:#839496;">&quot;
+</span><span style="color:#657b83;">]
+</span></code></pre>
+<p>Using <code>include_docs</code> in combination with <code>keys</code> will have no effect.</p>
+<h3 id="values">Values</h3>
+<p>The <code>values</code> flag will return the list of document identifiers referenced for each key:</p>
+<pre><code><span style="color:#268bd2;">query </span><span style="color:#657b83;">= {</span><span style="color:#268bd2;">name </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">quotes</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">index </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">tags</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#268bd2;">values </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true</span><span style="color:#657b83;">}
+</span></code></pre>
+<pre><code><span style="color:#657b83;">[
+</span><span style="color:#657b83;">  [
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">doc-id-1</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">doc-id-2</span><span style="color:#839496;">&quot;
+</span><span style="color:#657b83;">  ],
+</span><span style="color:#657b83;">  [
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">doc-id-1</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">doc-id-3</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">,
+</span><span style="color:#657b83;">    </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">doc-id-4</span><span style="color:#839496;">&quot;
+</span><span style="color:#657b83;">  ]
+</span><span style="color:#657b83;">]
+</span></code></pre>
+<p>Using <code>include_docs</code> in combination with <code>values</code> will have no effect.</p>
+<h3 id="flat">Flat</h3>
+<p>The <code>flat</code> flag is a special case and should be used with care.</p>
+<p>By default indices group documents into a list of document identifiers as a key can reference multiple documents and this is normally what you want. For example, if you are creating an index by tag you want to group documents by tag name.</p>
+<p>But if you know that a key never references multiple documents and each <code>value</code> is only a single document then you might want to pass the <code>flat</code> option.</p>
+<p>When <code>flat</code> is given and the <em>value for an index only contains a single document</em> then the <code>value</code> will be an object and not an array.</p>
+<p>The <code>all</code> index is always returned with a flat structure as we know there is only one document for each key.</p>
+<p>This spares lots of repetitive array index access (<code>value.[0]</code>) for single document results.</p>
+<p><a href=".." title="Collections">Back to Collections</a></p>
+</article>
+<footer>
+  <div>
+    <p>Last updated Sun Dec  6 2020</p>
+    <p><a href="https://uwe.app" title="Made by Universal Web Editor" style="text-decoration: none; font-size: 12px;">MADE BY UWE</a></p>
+  </div>
+</footer>
+</main>
+<script src="../../../assets/plugins/std::sidebar/scripts/sidebar.js"></script>
+<noscript>For a better experience please enable Javascript</noscript>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Integrations</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-security-policy" content="default-src data: &#x27;self&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Integrate with external build tools">
+<meta name="commit" content="45fb088770d733d84a4bfc2fa5f5b8a5c5252aa8">
+<meta name="generator" content="uwe/0.42.4">
+<meta name="version" content="1.0.0">
+<meta name="author" content="Muji (https://tmpfs.org/)">
+<meta property="og:description" content="Integrate with external build tools">
+<meta property="og:image" content="http://localhost:8888/assets/img/social.jpg">
+<meta property="og:site_name" content="UWE / Universal Web Editor">
+<meta property="og:title" content="Integrations">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:8888/docs/getting-started/integrations/">
+<link rel="stylesheet" href="../../../assets/plugins/std::core/styles/standard.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::crumbtrail/styles/crumbtrail.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::sidebar/styles/sidebar.css">
+<link rel="stylesheet" href="../../../assets/plugins/font::inter::regular/plugins/regular/styles/fonts.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::menu/styles/menu.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::note/styles/note.css">
+<link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAAAAACwAAAAAAQABAAACASgAOw==">
+<link rel="stylesheet" href="../../../assets/styles/main.css">
+<link rel="manifest" href="../../../app.webmanifest">
+<link rel="canonical" href="http://localhost:8888/docs/getting-started/integrations/">
+
+</head>
+<body>
+<input id="sidebar-toggle" type="checkbox" >
+<aside id="sidebar" >
+<header>
+  <a href="../../" title="Home">Home</a>
+  <label for="sidebar-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </label>
+</header>
+<nav>
+<p><a href="../../" title="Documentation">Docs</a> / <a href="../../getting-started/" title="Getting Started">Getting Started</a></p>
+<ul><li><a href="../../getting-started/new-project/" title="New Project">New Project</a></li>
+<li><a href="../../getting-started/build-project/" title="Build Project">Build Project</a></li>
+<li><a href="../../getting-started/site-settings/" title="Site Settings">Site Settings</a></li>
+<li><a href="../../getting-started/live-reload/" title="Live Reload">Live Reload</a></li>
+<li><a href="../../getting-started/adding-pages/" title="Adding Pages">Adding Pages</a></li>
+<li><a href="../../getting-started/front-matter/" title="Front Matter">Front Matter</a></li>
+<li><a href="../../getting-started/links/" title="Links">Links</a></li>
+<li><a href="../../getting-started/content/" title="Content">Content</a></li>
+<li><a href="../../getting-started/styles/" title="Styles">Styles</a></li>
+<li><a href="../../getting-started/scripts/" title="Scripts">Scripts</a></li>
+<li><a href="../../getting-started/layouts/" title="Layouts">Layouts</a></li>
+<li class='selected'><a href="../../getting-started/integrations/" title="Integrations">Integrations</a></li>
+<li><a href="../../getting-started/web-manifest/" title="Web Manifest">Web Manifest</a></li>
+<li><a href="../../getting-started/debugging/" title="Debugging">Debugging</a></li>
+<li><a href="../../getting-started/conventions/" title="Conventions">Conventions</a></li>
+<li><a href="../../getting-started/directory-listing/" title="Directory Listing">Directory Listing</a></li>
+<li><a href="../../getting-started/publish/" title="Publish">Publish</a></li>
+<li><a href="../../getting-started/powered-by/" title="Powered By">Powered By</a></li>
+</ul>
+</nav>
+
+</aside>
+<main>
+<header>
+  <a href="../../" title="Home">UWE</a>
+  <label for="sidebar-toggle">
+  <span>Menu</span>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
+  </label>
+</header>
+<article>
+<h1 id="integrations">Integrations</h1>
+<nav class="crumbtrail">
+<a href="../../../" title="Universal Web Editor">Home</a><a href="../../" title="Documentation and developer reference">Documentation</a><a href="../" title="Getting started guide">Getting Started</a>Integrations</nav>
+<p>To integrate a Javscript build tool or CSS preprocessor add a <a href="../../other/hooks/" title="Hooks">hook</a> to your project. This page describes the steps for creating an integration and you can find examples for several popular tools in the <a href="https://github.com/uwe-app/integrations">integrations repository</a>.</p>
+<p>For the best performance compiling Javascript/Typescript we recommend using the <a href="https://github.com/uwe-app/integrations/tree/main/swc">swc</a> integration.</p>
+<ul>
+<li><a href="#integration-steps">Integration Steps</a> General steps for integration.
+<ul>
+<li><a href="#modules">Modules</a> Dependencies should go in the project root.</li>
+<li><a href="#sources">Sources</a> Source file location.</li>
+<li><a href="#configuration">Configuration</a> Configuration file location.</li>
+<li><a href="#site-settings">Site Settings</a>
+<ul>
+<li><a href="#hook">Hook</a> Add a hook to the site settings.</li>
+<li><a href="#paths">Paths</a> Set the script and style paths.
+<ul>
+<li><a href="#script">Script</a> Set the main script for the site.</li>
+<li><a href="#style">Style</a> Set the main stylesheet for the site.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#production">Production</a> Optimizations for release builds.</li>
+</ul>
+</li>
+<li><a href="#run">Run</a> Compile integrations with live reload or for a production release.</li>
+<li><a href="#examples">Examples</a> List of example integrations.</li>
+</ul>
+<h2 id="integration-steps">Integration Steps</h2>
+<p>To integrate with an external build tool add a <a href="../../other/hooks/" title="Hooks">hook</a> which runs whenever a website is compiled; each integration also runs the hook when build source files are changed and live reload is enabled (<code>uwe dev --exec</code>).</p>
+<h3 id="modules">Modules</h3>
+<p>For <a href="https://nodejs.org/">Node</a> based tools <code>package.json</code> and <code>node_modules</code> should be in the project root.</p>
+<h3 id="sources">Sources</h3>
+<p>Source files should go in the <code>site</code> directory so they can trigger a live reload and use an <code>.ignore</code> file to exclude sources from the website build.</p>
+<h3 id="target">Target</h3>
+<p>Build tools executed via hooks should write build products to the <code>BUILD_TARGET</code> environment variable which is automatically exposed to the command when a hook executes and points to the output directory for the current build. The <a href="../../other/hooks/" title="Hooks">hooks</a> documentation has more information about the environment variables available to build tools.</p>
+<p>Do <strong>not write build products</strong> to the <code>site</code> directory otherwise you may <strong>create an infinite loop</strong> executing the hook!</p>
+<h3 id="configuration">Configuration</h3>
+<p>Configuration files for build tools should go in the project root outside of the <code>site</code> directory unless they should trigger a live reload.</p>
+<p>If a configuration file should trigger a hook to be run when files change it can go in the <code>site</code> directory; for example the <a href="https://tailwindcss.com/">tailwind</a> integration needs to rebuild the stylesheet when the configuration file changes (see the <a href="https://github.com/uwe-app/integrations/tree/main/tailwind-postcss">tailwind-postcss</a> integration).</p>
+<h2 id="site-settings">Site Settings</h2>
+<h3 id="hook">Hook</h3>
+<p>The hook setting in <code>site.toml</code> runs the build script:</p>
+<pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
+</span><span style="color:#268bd2;">path </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">npm</span><span style="color:#839496;">&quot;
+</span><span style="color:#268bd2;">args </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">run</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">build</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
+</span><span style="color:#268bd2;">files </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">src/*.js</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
+</span><span style="color:#268bd2;">watch </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
+</span></code></pre>
+<p>The list of <code>files</code> is important to trigger the hook again when live reload is enabled; paths in the <code>files</code> list are resolved relative to the <code>site</code> directory.</p>
+<h3 id="paths">Paths</h3>
+<p>The compiler cannot automatically detect the main script and styles for the website as they are generated dynamically and put directly into the build target so we need to add these settings to <code>site.toml</code> so that the main script and styles are embedded on every page.</p>
+<p>Note that the main script and style for the website should configure the <code>dynamic</code> flag to indicate that the file is generated dynamically and bypass the compiler check that the file exists.</p>
+<h4 id="script">Script</h4>
+<pre><code><span style="color:#657b83;">[</span><span style="color:#b58900;">script</span><span style="color:#657b83;">]
+</span><span style="color:#268bd2;">src </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">/assets/scripts/main.js</span><span style="color:#839496;">&quot;
+</span><span style="color:#268bd2;">dynamic </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
+</span></code></pre>
+<p>Script settings accept all the attributes of the <code>&lt;script&gt;</code> element so if you are compiling to ES modules you should specify the <code>type</code>:</p>
+<pre><code><span style="color:#268bd2;">src </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">/assets/scripts/main.js</span><span style="color:#839496;">&quot;
+</span><span style="color:#268bd2;">type </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">module</span><span style="color:#839496;">&quot;
+</span><span style="color:#268bd2;">dynamic </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
+</span></code></pre>
+<h4 id="style">Style</h4>
+<p>The main stylesheet that would be loaded for all pages also needs to be <code>dynamic</code> when using an integration that compiles stylesheets:</p>
+<pre><code><span style="color:#657b83;">[</span><span style="color:#b58900;">style</span><span style="color:#657b83;">]
+</span><span style="color:#268bd2;">src </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">/assets/styles/main.css</span><span style="color:#839496;">&quot;
+</span><span style="color:#268bd2;">dynamic </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
+</span></code></pre>
+<h2 id="production">Production</h2>
+<p>The compiler will automatically set <code>NODE_ENV=production</code> for release builds (<code>uwe build --exec</code> or <code>uwe server --exec</code>) and we recommend using this environment variable to add production optimizations in build tool configuration files (see an example in <a href="https://github.com/uwe-app/integrations/tree/main/tailwind-postcss/postcss.config.js">postcss.config.js</a>).</p>
+<p>For some build tools this may not be possible in which case you can set a hook just for the release <a href="../../other/profiles/" title="Profiles">profiles</a>; for example:</p>
+<pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
+</span><span style="color:#268bd2;">path </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">npm</span><span style="color:#839496;">&quot;
+</span><span style="color:#268bd2;">args </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">run</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">build-production</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
+</span><span style="color:#268bd2;">profiles </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">release</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
+</span><span style="color:#268bd2;">files </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">src/*.js</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
+</span><span style="color:#268bd2;">watch </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
+</span></code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="javscript-typescript">Javscript / Typescript</h3>
+<ul>
+<li><a href="https://github.com/uwe-app/integrations/tree/main/swc">Swc</a> Compile scripts using <a href="https://swc.rs/">swc</a>.</li>
+<li><a href="https://github.com/uwe-app/integrations/tree/main/esbuild">Esbuild</a> Compile scripts using <a href="https://esbuild.github.io">esbuild</a>.</li>
+<li><a href="https://github.com/uwe-app/integrations/tree/main/babel">Babel</a> Compile scripts using <a href="https://babeljs.io/">babel</a>.</li>
+<li><a href="https://github.com/uwe-app/integrations/tree/main/webpack">Webpack</a> Compile scripts using <a href="https://webpack.js.org/">webpack</a>.</li>
+</ul>
+<h3 id="stylesheets">Stylesheets</h3>
+<ul>
+<li><a href="https://github.com/uwe-app/integrations/tree/main/sass">Sass</a>: Compile styles using <a href="https://sass-lang.com/">sass</a>.</li>
+<li><a href="https://github.com/uwe-app/integrations/tree/main/postcss">PostCSS</a>: Compile styles using <a href="https://postcss.org/">postcss</a>.</li>
+<li><a href="https://github.com/uwe-app/integrations/tree/main/tailwind-postcss">Tailwind w/ PostCSS</a>: Compile styles using the <a href="https://tailwindcss.com/">tailwind</a> framework.</li>
+</ul>
+<nav class="next_prev">
+<div>
+  &#x27f5;&nbsp;Previous: <a href="../../getting-started/layouts/" title="Layouts">Layouts</a>
+</div>
+<div>
+  Next: <a href="../../getting-started/web-manifest/" title="Web Manifest">Web Manifest</a>&nbsp;&#x27f6;
+</div>
+</nav>
+</article>
+<footer>
+  <div>
+    <p>Last updated Sat Jan  2 2021</p>
+    <p><a href="https://uwe.app" title="Made by Universal Web Editor" style="text-decoration: none; font-size: 12px;">MADE BY UWE</a></p>
+  </div>
+</footer>
+</main>
+<script src="../../../assets/plugins/std::sidebar/scripts/sidebar.js"></script>
+<noscript>For a better experience please enable Javascript</noscript>
+</body>
+</html>

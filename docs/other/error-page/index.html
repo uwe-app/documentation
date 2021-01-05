@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Error Page</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-security-policy" content="default-src data: &#x27;self&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Custom error page">
+<meta name="commit" content="45fb088770d733d84a4bfc2fa5f5b8a5c5252aa8">
+<meta name="generator" content="uwe/0.42.4">
+<meta name="version" content="1.0.0">
+<meta name="author" content="Muji (https://tmpfs.org/)">
+<meta property="og:description" content="Custom error page">
+<meta property="og:image" content="http://localhost:8888/assets/img/social.jpg">
+<meta property="og:site_name" content="UWE / Universal Web Editor">
+<meta property="og:title" content="Error Page">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:8888/docs/other/error-page/">
+<link rel="stylesheet" href="../../../assets/plugins/std::core/styles/standard.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::crumbtrail/styles/crumbtrail.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::sidebar/styles/sidebar.css">
+<link rel="stylesheet" href="../../../assets/plugins/font::inter::regular/plugins/regular/styles/fonts.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::menu/styles/menu.css">
+<link rel="stylesheet" href="../../../assets/plugins/std::note/styles/note.css">
+<link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAAAAACwAAAAAAQABAAACASgAOw==">
+<link rel="stylesheet" href="../../../assets/styles/main.css">
+<link rel="manifest" href="../../../app.webmanifest">
+<link rel="canonical" href="http://localhost:8888/docs/other/error-page/">
+
+</head>
+<body>
+<input id="sidebar-toggle" type="checkbox" >
+<aside id="sidebar" >
+<header>
+  <a href="../../" title="Home">Home</a>
+  <label for="sidebar-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </label>
+</header>
+<nav>
+<p><a href="../../" title="Documentation">Docs</a> / <a href="../../other/" title="Other Topics">Other Topics</a></p>
+<ul><li><a href="../../other/workspaces/" title="Workspaces">Workspaces</a></li>
+<li><a href="../../other/profiles/" title="Profiles">Profiles</a></li>
+<li><a href="../../other/hooks/" title="Hooks">Hooks</a></li>
+<li><a href="../../other/content-security-policy/" title="Content Security Policy">Content Security Policy</a></li>
+<li><a href="../../other/json-templates/" title="JSON Templates">JSON Templates</a></li>
+<li><a href="../../other/link-catalog/" title="Link Catalog">Link Catalog</a></li>
+<li><a href="../../other/ignores/" title="Ignores">Ignores</a></li>
+<li class='selected'><a href="../../other/error-page/" title="Error Page">Error Page</a></li>
+<li><a href="../../other/strict-mode/" title="Strict Mode">Strict Mode</a></li>
+<li><a href="../../other/parallel-builds/" title="Parallel Builds">Parallel Builds</a></li>
+<li><a href="../../other/ssl-certificates/" title="SSL Certificates">SSL Certificates</a></li>
+</ul>
+</nav>
+
+</aside>
+<main>
+<header>
+  <a href="../../" title="Home">UWE</a>
+  <label for="sidebar-toggle">
+  <span>Menu</span>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
+  </label>
+</header>
+<article>
+<h1 id="error-page">Error Page</h1>
+<nav class="crumbtrail">
+<a href="../../../" title="Universal Web Editor">Home</a><a href="../../" title="Documentation and developer reference">Documentation</a><a href="../" title="More information">Other Topics</a>Error Page</nav>
+<p>When you create a new project from a blueprint a <a href="https://github.com/uwe-app/runtime/blob/master/blueprint/default/site/404.md">404.md</a> file will be included which will compile to a <code>404.html</code> page at the root of the site.</p>
+<p>The important thing to remember when designing error pages is that they are not served in a fixed location. The website hosting provider can serve these files from any URL which means that paths <em>must be absolute</em>. Therefore an error page will typically include page meta data such as this example:</p>
+<pre><code><span style="color:#268bd2;">absolute </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
+</span><span style="color:#268bd2;">listing </span><span style="color:#657b83;">= </span><span style="color:#b58900;">false
+</span><span style="color:#268bd2;">rewrite-index </span><span style="color:#657b83;">= </span><span style="color:#b58900;">false
+</span></code></pre>
+<p>Note that <code>rewrite-index</code> is disabled otherwise the file would be written to <code>404/index.html</code>!</p>
+<nav class="next_prev">
+<div>
+  &#x27f5;&nbsp;Previous: <a href="../../other/ignores/" title="Ignores">Ignores</a>
+</div>
+<div>
+  Next: <a href="../../other/strict-mode/" title="Strict Mode">Strict Mode</a>&nbsp;&#x27f6;
+</div>
+</nav>
+</article>
+<footer>
+  <div>
+    <p>Last updated Sun Dec  6 2020</p>
+    <p><a href="https://uwe.app" title="Made by Universal Web Editor" style="text-decoration: none; font-size: 12px;">MADE BY UWE</a></p>
+  </div>
+</footer>
+</main>
+<script src="../../../assets/plugins/std::sidebar/scripts/sidebar.js"></script>
+<noscript>For a better experience please enable Javascript</noscript>
+</body>
+</html>
