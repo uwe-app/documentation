@@ -1,0 +1,6 @@
+name = "std::documentation"
+version = "1.0.0"
+description = "Offline documentation HTML website"
+type = "library"
+keywords = ["Documentation"]
+license = ["MIT", "Apache-2.0"]
