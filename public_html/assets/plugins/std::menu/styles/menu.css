@@ -1,1 +1,4 @@
-/home/muji/.uwe/plugins/std::menu::1.0.0/styles/menu.css
+nav.next_prev {
+  display: flex;
+  justify-content: space-between;
+}

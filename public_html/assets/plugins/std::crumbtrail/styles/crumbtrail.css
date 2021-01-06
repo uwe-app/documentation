@@ -1,1 +1,11 @@
-/home/muji/.uwe/plugins/std::crumbtrail::1.0.1/styles/crumbtrail.css
+nav.crumbtrail > * {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+nav.crumbtrail > *::after {
+  display: inline-block;
+  content: '»';
+  margin: 0 .5rem;
+}

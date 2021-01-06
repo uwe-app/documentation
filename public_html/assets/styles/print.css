@@ -1,1 +1,19 @@
-/home/muji/git/uwe/sites/website/site/assets/styles/print.css
+@media print {
+  body {
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  body > aside {
+    display: none !important;
+  }
+
+  main {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  main > header, main > footer {
+    display: none !important;
+  }
+}

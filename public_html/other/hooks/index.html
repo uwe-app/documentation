@@ -1,150 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<title>Hooks</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="content-security-policy" content="default-src data: &#x27;self&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Run commands before or after a build">
-<meta name="commit" content="45fb088770d733d84a4bfc2fa5f5b8a5c5252aa8">
-<meta name="generator" content="uwe/0.42.4">
-<meta name="version" content="1.0.0">
-<meta name="author" content="Muji (https://tmpfs.org/)">
-<meta property="og:description" content="Run commands before or after a build">
-<meta property="og:image" content="http://localhost:8888/assets/img/social.jpg">
-<meta property="og:site_name" content="UWE / Universal Web Editor">
-<meta property="og:title" content="Hooks">
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:8888/docs/other/hooks/">
-<link rel="stylesheet" href="../../../assets/plugins/std::core/styles/standard.css">
-<link rel="stylesheet" href="../../../assets/plugins/std::crumbtrail/styles/crumbtrail.css">
-<link rel="stylesheet" href="../../../assets/plugins/std::sidebar/styles/sidebar.css">
-<link rel="stylesheet" href="../../../assets/plugins/font::inter::regular/plugins/regular/styles/fonts.css">
-<link rel="stylesheet" href="../../../assets/plugins/std::menu/styles/menu.css">
-<link rel="stylesheet" href="../../../assets/plugins/std::note/styles/note.css">
-<link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAAAAACwAAAAAAQABAAACASgAOw==">
-<link rel="stylesheet" href="../../../assets/styles/main.css">
-<link rel="manifest" href="../../../app.webmanifest">
-<link rel="canonical" href="http://localhost:8888/docs/other/hooks/">
-
-</head>
-<body>
-<input id="sidebar-toggle" type="checkbox" >
-<aside id="sidebar" >
-<header>
-  <a href="../../" title="Home">Home</a>
-  <label for="sidebar-toggle">
-  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-  </label>
-</header>
-<nav>
-<p><a href="../../" title="Documentation">Docs</a> / <a href="../../other/" title="Other Topics">Other Topics</a></p>
-<ul><li><a href="../../other/workspaces/" title="Workspaces">Workspaces</a></li>
-<li><a href="../../other/profiles/" title="Profiles">Profiles</a></li>
-<li class='selected'><a href="../../other/hooks/" title="Hooks">Hooks</a></li>
-<li><a href="../../other/content-security-policy/" title="Content Security Policy">Content Security Policy</a></li>
-<li><a href="../../other/json-templates/" title="JSON Templates">JSON Templates</a></li>
-<li><a href="../../other/link-catalog/" title="Link Catalog">Link Catalog</a></li>
-<li><a href="../../other/ignores/" title="Ignores">Ignores</a></li>
-<li><a href="../../other/error-page/" title="Error Page">Error Page</a></li>
-<li><a href="../../other/strict-mode/" title="Strict Mode">Strict Mode</a></li>
-<li><a href="../../other/parallel-builds/" title="Parallel Builds">Parallel Builds</a></li>
-<li><a href="../../other/ssl-certificates/" title="SSL Certificates">SSL Certificates</a></li>
-</ul>
-</nav>
-
-</aside>
-<main>
-<header>
-  <a href="../../" title="Home">UWE</a>
-  <label for="sidebar-toggle">
-  <span>Menu</span>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
-  </label>
-</header>
-<article>
-<h1 id="hooks">Hooks</h1>
-<nav class="crumbtrail">
-<a href="../../../" title="Universal Web Editor">Home</a><a href="../../" title="Documentation and developer reference">Documentation</a><a href="../" title="More information">Other Topics</a>Hooks</nav>
-<p>Hooks allow us to run commands before or after a build which means you can easily integrate with your favourite CSS pre-processor, Javascript bundler or perform custom optimizations.</p>
-<p>Hook command execution requires that the <code>--exec</code> capability is granted on the command line, for example:</p>
-<pre><code class="language-text">uwe dev --exec
-</code></pre>
-<p>Commands are executed with the current working directory set to the project folder.</p>
-<p>Hooks are <a href="../../getting-started/site-settings/" title="Site Settings">site settings</a> named using the <code>hooks.run</code> notation, so the simplest hook would be:</p>
-<pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Hooks</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="content-security-policy" content="default-src data: &#x27;self&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Run commands before or after a build"><meta name="commit" content="a8182a48d1cec63f1db3991b0153c21c2f3ebd02"><meta name="generator" content="uwe/0.42.7"><meta name="version" content="1.0.0"><meta name="author" content="Muji (https://tmpfs.org/)"><meta property="og:description" content="Run commands before or after a build"><meta property="og:image" content="https://uwe.app/assets/img/social.jpg"><meta property="og:site_name" content="UWE / Universal Web Editor"><meta property="og:title" content="Hooks"><meta property="og:type" content="website"><meta property="og:url" content="https://uwe.app/docs/other/hooks/"><link rel="stylesheet" href="../../../assets/plugins/font::inter::regular/plugins/regular/styles/fonts.css"><link rel="stylesheet" href="../../../assets/plugins/std::menu/styles/menu.css"><link rel="stylesheet" href="../../../assets/plugins/std::sidebar/styles/sidebar.css"><link rel="stylesheet" href="../../../assets/plugins/std::core/styles/standard.css"><link rel="stylesheet" href="../../../assets/plugins/std::crumbtrail/styles/crumbtrail.css"><link rel="stylesheet" href="../../../assets/plugins/std::note/styles/note.css"><link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAAAAACwAAAAAAQABAAACASgAOw=="><link rel="stylesheet" href="../../../assets/styles/main.css"><link rel="manifest" href="../../../app.webmanifest"><link rel="canonical" href="https://uwe.app/docs/other/hooks/"></head><body><input id="sidebar-toggle" type="checkbox"><aside id="sidebar"><header><a href="../../" title="Home">Home</a><label for="sidebar-toggle"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></label></header><nav><p><a href="../../" title="Documentation">Docs</a> / <a href="../../other/" title="Other Topics">Other Topics</a></p><ul><li><a href="../../other/workspaces/" title="Workspaces">Workspaces</a></li><li><a href="../../other/profiles/" title="Profiles">Profiles</a></li><li class='selected'><a href="../../other/hooks/" title="Hooks">Hooks</a></li><li><a href="../../other/content-security-policy/" title="Content Security Policy">Content Security Policy</a></li><li><a href="../../other/json-templates/" title="JSON Templates">JSON Templates</a></li><li><a href="../../other/link-catalog/" title="Link Catalog">Link Catalog</a></li><li><a href="../../other/ignores/" title="Ignores">Ignores</a></li><li><a href="../../other/error-page/" title="Error Page">Error Page</a></li><li><a href="../../other/strict-mode/" title="Strict Mode">Strict Mode</a></li><li><a href="../../other/parallel-builds/" title="Parallel Builds">Parallel Builds</a></li><li><a href="../../other/ssl-certificates/" title="SSL Certificates">SSL Certificates</a></li></ul></nav></aside><main><header><a href="../../" title="Home">UWE</a><label for="sidebar-toggle"><span>Menu</span>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span></label></header><article><h1 id="hooks">Hooks</h1><nav class="crumbtrail"><a href="../../../" title="Universal Web Editor">Home</a><a href="../../" title="Documentation and developer reference">Documentation</a><a href="../" title="More information">Other Topics</a>Hooks</nav><p>Hooks allow us to run commands before or after a build which means you can easily integrate with your favourite CSS pre-processor, Javascript bundler or perform custom optimizations.</p><p>Hook command execution requires that the <code>--exec</code> capability is granted on the command line, for example:</p><pre><code class="language-text">uwe dev --exec
+</code></pre><p>Commands are executed with the current working directory set to the project folder.</p><p>Hooks are <a href="../../getting-started/site-settings/" title="Site Settings">site settings</a> named using the <code>hooks.run</code> notation, so the simplest hook would be:</p><pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
 </span><span style="color:#268bd2;">path </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">echo</span><span style="color:#839496;">&quot;
-</span></code></pre>
-<p>Arguments can be passed using the <code>args</code> field:</p>
-<pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
+</span></code></pre><p>Arguments can be passed using the <code>args</code> field:</p><pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
 </span><span style="color:#268bd2;">path </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">echo</span><span style="color:#839496;">&quot;
 </span><span style="color:#268bd2;">args </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">Hello</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">, world!</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
-</span></code></pre>
-<div class="note">
-<span class="label">info</span>
-<p>When a command <code>path</code> begins with a period (eg: <code>./build.sh</code>) it is resolved relative to the project folder which is useful if you have executable programs inside the project.</p>
-</div>
-<h2 id="environment">Environment</h2>
-<p>Hooks are passed the following environment variables; paths are canonical absolute paths.</p>
-<ul>
-<li><code>BUILD_SOURCE</code> The project source directory, eg: <code>site</code>.</li>
-<li><code>BUILD_TARGET</code> The target build directory, eg: <code>build/debug</code>.</li>
-<li><code>BUILD_PROJECT</code> The project root directory containing <code>site.toml</code>.</li>
-<li><code>BUILD_FILE</code> The file that triggered the hook to be executed when watching files.</li>
-<li><code>NODE_ENV</code> The current environment.</li>
-</ul>
-<div class="note">
-<span class="label">info</span>
-<p>The <code>BUILD_FILE</code> variable will only be set when live reload is watching files and a matched file has changed.</p>
-</div>
-<h2 id="watch">Watch</h2>
-<p>To indicate ownership of files relative to <code>site</code> use the <code>files</code> glob patterns in combination with the <code>watch</code> flag and your hook will be executed when matched files change. File glob patterns are resolved relative to the <code>site</code> directory.</p>
-<p>For example, when live reload is enabled changes to CSS files in <code>site/src</code> will trigger the hook:</p>
-<pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
+</span></code></pre><div class="note"><span class="label">info</span><p>When a command <code>path</code> begins with a period (eg: <code>./build.sh</code>) it is resolved relative to the project folder which is useful if you have executable programs inside the project.</p></div><h2 id="environment">Environment</h2><p>Hooks are passed the following environment variables; paths are canonical absolute paths.</p><ul><li><code>BUILD_SOURCE</code> The project source directory, eg: <code>site</code>.</li><li><code>BUILD_TARGET</code> The target build directory, eg: <code>build/debug</code>.</li><li><code>BUILD_PROJECT</code> The project root directory containing <code>site.toml</code>.</li><li><code>BUILD_FILE</code> The file that triggered the hook to be executed when watching files.</li><li><code>NODE_ENV</code> The current environment.</li></ul><div class="note"><span class="label">info</span><p>The <code>BUILD_FILE</code> variable will only be set when live reload is watching files and a matched file has changed.</p></div><h2 id="watch">Watch</h2><p>To indicate ownership of files relative to <code>site</code> use the <code>files</code> glob patterns in combination with the <code>watch</code> flag and your hook will be executed when matched files change. File glob patterns are resolved relative to the <code>site</code> directory.</p><p>For example, when live reload is enabled changes to CSS files in <code>site/src</code> will trigger the hook:</p><pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
 </span><span style="color:#268bd2;">path </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">npm</span><span style="color:#839496;">&quot;
 </span><span style="color:#268bd2;">args </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">run</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">, </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">build</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
 </span><span style="color:#268bd2;">files </span><span style="color:#657b83;">= [ </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">src/*.css</span><span style="color:#839496;">&quot; </span><span style="color:#657b83;">]
 </span><span style="color:#268bd2;">watch </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
-</span></code></pre>
-<h2 id="after">After</h2>
-<p>By default hooks are run before a build, if you need to run a hook afterwards use the <code>after</code> flag:</p>
-<pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
+</span></code></pre><h2 id="after">After</h2><p>By default hooks are run before a build, if you need to run a hook afterwards use the <code>after</code> flag:</p><pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
 </span><span style="color:#268bd2;">path </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">node</span><span style="color:#839496;">&quot;
 </span><span style="color:#268bd2;">args </span><span style="color:#657b83;">= [</span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">optimize.js</span><span style="color:#839496;">&quot;</span><span style="color:#657b83;">]
 </span><span style="color:#268bd2;">after </span><span style="color:#657b83;">= </span><span style="color:#b58900;">true
-</span></code></pre>
-<p>This is particularly useful if you need custom optimizations for the build files.</p>
-<h2 id="output">Output</h2>
-<p>Once your script is working you might want to use the <code>stdout</code> and <code>stderr</code> flags to suppress program output:</p>
-<pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
+</span></code></pre><p>This is particularly useful if you need custom optimizations for the build files.</p><h2 id="output">Output</h2><p>Once your script is working you might want to use the <code>stdout</code> and <code>stderr</code> flags to suppress program output:</p><pre><code><span style="color:#657b83;">[[</span><span style="color:#b58900;">hooks</span><span style="color:#657b83;">.</span><span style="color:#b58900;">run</span><span style="color:#657b83;">]]
 </span><span style="color:#268bd2;">path </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">./compile-css</span><span style="color:#839496;">&quot;
 </span><span style="color:#268bd2;">stdout </span><span style="color:#657b83;">= </span><span style="color:#b58900;">false
-</span></code></pre>
-<h2 id="node-environment">Node Environment</h2>
-<p>The <code>NODE_ENV</code> variable is set to <code>development</code> for debug builds and <code>production</code> for release builds; you can change these settings if you need to:</p>
-<pre><code><span style="color:#657b83;">[</span><span style="color:#b58900;">node</span><span style="color:#657b83;">]
+</span></code></pre><h2 id="node-environment">Node Environment</h2><p>The <code>NODE_ENV</code> variable is set to <code>development</code> for debug builds and <code>production</code> for release builds; you can change these settings if you need to:</p><pre><code><span style="color:#657b83;">[</span><span style="color:#b58900;">node</span><span style="color:#657b83;">]
 </span><span style="color:#268bd2;">debug </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">devel</span><span style="color:#839496;">&quot;
 </span><span style="color:#268bd2;">release </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">prod</span><span style="color:#839496;">&quot;
-</span></code></pre>
-<h2 id="notes">Notes</h2>
-<p>The execution order of hooks is not guaranteed.</p>
-<nav class="next_prev">
-<div>
-  &#x27f5;&nbsp;Previous: <a href="../../other/profiles/" title="Profiles">Profiles</a>
-</div>
-<div>
+</span></code></pre><h2 id="notes">Notes</h2><p>The execution order of hooks is not guaranteed.</p><nav class="next_prev"><div>
+  &#x27f5;&nbsp;Previous: <a href="../../other/profiles/" title="Profiles">Profiles</a></div><div>
   Next: <a href="../../other/content-security-policy/" title="Content Security Policy">Content Security Policy</a>&nbsp;&#x27f6;
-</div>
-</nav>
-</article>
-<footer>
-  <div>
-    <p>Last updated Sat Jan  2 2021</p>
-    <p><a href="https://uwe.app" title="Made by Universal Web Editor" style="text-decoration: none; font-size: 12px;">MADE BY UWE</a></p>
-  </div>
-</footer>
-</main>
-<script src="../../../assets/plugins/std::sidebar/scripts/sidebar.js"></script>
-<noscript>For a better experience please enable Javascript</noscript>
-</body>
-</html>
+</div></nav></article><footer><div><p>Last updated Sat Jan  2 2021</p><p><a href="https://uwe.app" title="Made by Universal Web Editor" style="text-decoration: none; font-size: 12px;">MADE BY UWE</a></p></div></footer></main><script src="../../../assets/plugins/std::sidebar/scripts/sidebar.js"></script><noscript>For a better experience please enable Javascript</noscript></body></html>
