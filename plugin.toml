@@ -1,5 +1,5 @@
 name = "std::documentation"
-version = "1.0.0"
+version = "0.42.5"
 description = "Offline documentation HTML website"
 type = "library"
 keywords = ["Documentation"]
