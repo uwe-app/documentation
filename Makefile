@@ -6,7 +6,9 @@ build:
 	@mkdir public_html
 	@cp -rf ${WEBSITE_ROOT}/build/docs/* public_html
 
-release: build
+push:
 	@(git add . && git commit -m "Update docs." && git push origin main)
 
-.PHONY: build release
+release: build push
+
+.PHONY: build push release
