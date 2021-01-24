@@ -1,0 +1,4 @@
+nav.next_prev {
+  display: flex;
+  justify-content: space-between;
+}

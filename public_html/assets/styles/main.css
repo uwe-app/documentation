@@ -1,0 +1,251 @@
+:root {
+  --info: #268bd2;
+  --tip: #859900;
+  --warn: #cb4b16;
+  --error: #dc322f;
+  --sidebar-width: 320px;
+  --sidebar-offset: -320px;
+  --header-height: 64px;
+
+  --std-font-sans: Inter, helvetica, arial, sans-serif;
+  --std-max-width: none;
+}
+
+html, * {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  height: 100vh;
+
+  /* Important so that pre elements do not overflow the width
+   * and therefore will respect overflow and scroll properly */
+  min-width: 0;
+}
+
+main header {
+  margin: 0;
+  padding: 0 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--std-background);
+  border-bottom: 1px solid var(--std-color);
+
+  height: var(--header-height);
+
+  position: sticky;
+  top: 0;
+}
+
+main > header + article {
+  padding: 2rem 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+[for="sidebar-toggle"] {
+  cursor: pointer;
+}
+
+[for="sidebar-toggle"] > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+[for="sidebar-toggle"] > img {
+  margin: 0;
+  max-width: none;
+}
+
+/*#sidebar {*/
+  /*background: white;*/
+/*}*/
+
+body > aside > nav > ul > li {
+  padding: 0 1rem;
+}
+
+svg {
+  fill: currentColor;
+}
+
+li.selected {
+  background: var(--std-background-active);
+}
+
+body > aside ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body > aside > nav > p {
+  margin: 1em 1em 0.5em 1em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+body > aside > nav > p > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body > aside > header {
+  display: flex;
+  height: var(--header-height);
+  border-bottom: 1px solid var(--std-color);
+  position: sticky;
+  top: 0;
+  background: var(--std-background);
+  padding: 0 1rem;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+  font-weight: normal;
+}
+
+main > header {
+  text-align: center;
+}
+
+main > header > nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+main > header nav a:not(:last-child) {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+main > header a.main {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul.features {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  columns: 2;
+  column-fill: balance;
+}
+
+li {
+  margin-top: 0;
+  /*-webkit-column-break-inside: avoid;*/
+            /*page-break-inside: avoid;*/
+                 /*break-inside: avoid;*/
+}
+
+ul.features > li :first-child {
+  margin-bottom: 0;
+}
+
+ul.features > li :first-child > * {
+  vertical-align: middle;
+}
+
+ul.features > li :first-child > svg {
+  position: relative;
+  margin-top: -4px;
+}
+
+footer {
+  font-size: 0.9rem;
+  padding-bottom: 2rem;
+}
+
+footer > :last-child {
+  text-align: center;
+}
+
+footer > nav:first-child {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  padding: .5rem 0;
+  border-top: 1px solid var(--nc-bg-3);
+}
+
+footer > div:last-child > p:last-child {
+  text-transform: uppercase;
+}
+
+footer > nav {
+  margin: 0;
+  padding: 0;
+}
+
+footer > nav > a {
+  text-transform: uppercase;
+}
+
+footer > nav:first-child span:not(:last-child):after {
+  content: "|";
+  margin: 0 .2rem;
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol > li {
+  display: table;
+  counter-increment: item;
+  /*margin-bottom: 0.6em;*/
+}
+
+ol > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+li ol > li {
+  margin: 0;
+}
+
+li ol > li:before {
+  content: counters(item, ".") " ";
+}
+
+li > p:first-child, li > p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li > a + p:last-child {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 480px) {
+  ul.features {
+    columns: 1;
+  }
+}

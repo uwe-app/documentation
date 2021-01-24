@@ -1,0 +1,30 @@
+:root {
+  --info: #268bd2;
+  --tip: #859900;
+  --warn: #cb4b16;
+  --error: #dc322f;
+}
+
+div.note {
+  border-left: 2px solid var(--info);
+  padding-left: 1rem;
+}
+
+div.note.tip {
+  border-color: var(--tip);
+}
+
+div.note.warn {
+  border-color: var(--warn);
+}
+
+div.note.error {
+  border-color: var(--error);
+}
+
+div.note > span.label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
