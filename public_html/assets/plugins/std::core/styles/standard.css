@@ -56,10 +56,14 @@ h1, h2, h3, h4, h5, h6 {
 a:link, a:visited {
   color: var(--std-link-color);
   text-decoration-color: var(--std-link-decoration-color);
+  text-underline-offset: .25em;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
 }
 
 a:hover, a:active, a:focus {
   color: var(--std-link-color-active);
+  text-decoration-color: var(--std-link-color-active);
 }
 
 body,
