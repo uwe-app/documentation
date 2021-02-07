@@ -139,3 +139,23 @@ p, nav, details {
 hr {
   margin: 1em 0;
 }
+
+table {
+  width: 100%;
+}
+
+thead tr {
+  background-color: var(--std-background-active);
+}
+
+th {
+  text-align: left;
+}
+
+th, td {
+  padding: 1em;
+}
+
+tr:nth-child(even) {
+  background-color: var(--std-background-active);
+}
