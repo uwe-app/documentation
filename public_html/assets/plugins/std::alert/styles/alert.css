@@ -5,24 +5,24 @@
   --error: #dc322f;
 }
 
-div.note {
+div.alert {
   border-left: 2px solid var(--info);
-  padding-left: 1rem;
+  padding-left: 1em;
 }
 
-div.note.tip {
+div.alert.tip {
   border-color: var(--tip);
 }
 
-div.note.warn {
+div.alert.warn {
   border-color: var(--warn);
 }
 
-div.note.error {
+div.alert.error {
   border-color: var(--error);
 }
 
-div.note > span.label {
+div.alert > span.label {
   display: block;
   font-size: 0.8rem;
   text-transform: uppercase;

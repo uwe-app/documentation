@@ -7,10 +7,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
-}
-
-#sidebar.animate {
-  transition: margin-left 0.25s linear;
+  display: block;
 }
 
 input#sidebar-toggle {
@@ -22,3 +19,18 @@ input#sidebar-toggle:checked + aside {
   margin-left: 0;
 }
 
+input#sidebar-toggle:not(:checked) + aside {
+  display: none;
+}
+
+/* Smaller screens invert the logic so the sidebar is hidden initially */
+@media screen and (max-width: 640px) {
+  input#sidebar-toggle:checked + aside {
+    display: none !important;
+  }
+
+  input#sidebar-toggle:not(:checked) + aside {
+    display: block !important;
+    margin-left: 0;
+  }
+}
