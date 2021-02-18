@@ -1,5 +1,5 @@
 name = "std::documentation"
-version = "0.48.0"
+version = "0.48.1"
 description = "Offline documentation HTML website"
 repository = "https://github.com/uwe-app/documentation"
 license = ["MIT", "Apache-2.0"]
