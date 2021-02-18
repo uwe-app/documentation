@@ -1,9 +1,5 @@
-/**
- *  Derived from: https://github.com/susam/spcss
- */
-
 :root {
-  --std-font-sans: helvetica, arial, sans-serif;
+  --std-font-family: helvetica, arial, sans-serif;
   --std-font-mono: monospace;
   --std-background: #fff;
   --std-background-active: #eee;
@@ -13,12 +9,17 @@
   --std-link-color: #03c;
   --std-link-color-active: #03f;
   --std-link-decoration-color: #03c5;
+  --std-link-transition: all .4s ease-in-out;
   --std-code-color: #009;
   --std-kbd-color: #060;
 
   --std-pre-background: #eee;
   --std-quote-background: #eee;
   --std-quote-border: #ccc;
+
+  /* Invert for selection */
+  --std-selection-background: var(--std-color);
+  --std-selection-color : var(--std-background);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,8 +40,13 @@
   }
 }
 
+::selection {
+  background: var(--std-selection-background);
+  color: var(--std-selection-color);
+}
+
 body {
-  font-family: var(--std-font-sans);
+  font-family: var(--std-font-family);
   background: var(--std-background);
   max-width: var(--std-max-width);
   line-height: 1.5;
@@ -53,12 +59,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em;
 }
 
-a:link, a:visited {
+a, a:link, a:visited {
   color: var(--std-link-color);
   text-decoration-color: var(--std-link-decoration-color);
   text-underline-offset: .25em;
   text-decoration-thickness: 1px;
   text-decoration-skip-ink: none;
+  transition: var(--std-link-transition);
 }
 
 a:hover, a:active, a:focus {
@@ -132,12 +139,21 @@ hr {
   background: var(--std-color);
 }
 
-p, nav, details {
+p, nav, details, dl {
   margin: 0 0 1em 0;
 }
 
 hr {
   margin: 1em 0;
+}
+
+abbr {
+  outline: none;
+  cursor: inherit;
+  text-underline-offset: .25em;
+  text-decoration-thickness: 1px;
+  text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
 }
 
 table {
