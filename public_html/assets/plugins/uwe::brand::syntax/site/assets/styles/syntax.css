@@ -1,0 +1,317 @@
+:root {
+  --stx-base: inherit;
+  --stx-text: inherit;
+
+  --stx-string: var(--uwe-navy-500);
+  --stx-comment: var(--uwe-navy-500);
+
+  --stx-keyword: var(--uwe-navy-600);
+  --stx-meta: var(--uwe-navy-600);
+  --stx-meta-brace: var(--uwe-navy-600);
+  --stx-constant: var(--uwe-navy-600);
+  --stx-variable: var(--uwe-navy-600);
+  --stx-storage: var(--uwe-navy-600);
+  --stx-support: var(--uwe-navy-600);
+  --stx-entity: var(--uwe-navy-600);
+
+  --stx-punctuation: var(--uwe-navy-300);
+
+  --stx-bright: var(--uwe-fire-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    --stx-base: var(--uwe-navy-100);
+    --stx-text: var(--uwe-navy-100);
+
+    --stx-keyword: var(--uwe-navy-300);
+    --stx-meta: var(--uwe-navy-300);
+    --stx-meta-brace: var(--uwe-navy-300);
+    --stx-constant: var(--uwe-navy-300);
+    --stx-variable: var(--uwe-navy-300);
+    --stx-storage: var(--uwe-navy-300);
+    --stx-support: var(--uwe-navy-300);
+    --stx-entity: var(--uwe-navy-300);
+
+    --stx-bright: var(--uwe-fire-light);
+  }
+}
+
+.code {
+  color: var(--stx-base);
+}
+
+.comment, .meta.documentation {
+  color: var(--stx-comment);
+}
+
+/* STRING */
+
+.string,
+.string.regexp,
+.string.quoted.double,
+.string.quoted.single,
+.string.other.math.tex,
+.string.quoted.other.lt-gt.include.c,
+.punctuation.definition.string.begin,
+.punctuation.definition.string.end
+{
+  color: var(--stx-string);
+}
+
+/* TEXT */
+
+.text.html.basic,
+.text.tex.latex
+{
+  color: var(--stx-text);
+}
+
+/* CONSTANT */
+
+.constant,
+.constant.language,
+.constant.numeric,
+.constant.character,
+.constant.other,
+.constant.character.escape,
+.constant.other.symbol.ruby,
+.constant.other.math.tex,
+.constant.other.general.math.tex,
+.constant.character.math.tex,
+.constant.other.reference.link.markdown,
+.constant.numeric.line-number.find-in-files
+{
+  color: var(--stx-constant);
+}
+
+/* STORAGE */
+
+.storage,
+.storage.modifier,
+.storage.type,
+.storage.type.class.python,
+.storage.type.function.python,
+.storage.modifier.global.python,
+.storage.modifier.c++
+{
+  color: var(--stx-storage);
+}
+
+.storage.type {
+  color: var(--stx-storage);
+}
+
+/* SUPPORT */
+
+.support,
+.support.type,
+.support.class,
+.support.type.property-name.css,
+.support.function,
+.support.function.construct,
+.support.type.exception,
+.support.constant.color,
+.support.type.exception.python,
+.support.function.perl,
+.support.function.construct.php,
+.support.function.be.latex,
+.support.function.section.latex,
+.support.function.general.tex
+{
+  color: var(--stx-support);
+}
+
+/* VARIABLE */
+
+.variable,
+.variable.function,
+.variable.language,
+.variable.other.readwrite.js,
+.variable.other.object.js,
+.variable.other.constant.js ,
+.variable.other.constant.ruby,
+.variable.parameter.function.latex,
+.variable.parameter.definition.label.latex,
+.variable.other.loop.shell
+{
+  color: var(--stx-variable);
+}
+
+/* META */
+
+.meta.import,
+.meta.preprocessor,
+.meta.selector.css,
+.meta.tag.block.any,
+.meta.tag.any.html,
+.meta.tag.other.html,
+.meta.tag.inline.any,
+.meta.tag.structure.any.html,
+.meta.tag.xml,
+.meta.array,
+.meta.preprocessor.macro.c,
+.meta.preprocessor.c.include,
+.meta.link.reference,
+.meta.paragraph.markdown,
+.meta.dummy.line-break,
+.meta.scope.for-in-loop.shell,
+.meta.scope.case-block.shell,
+.meta.scope.case-body.shell,
+.meta.diff,
+.meta.diff.header,
+.meta.diff.range
+{
+  color: var(--stx-meta);
+  /*font-weight: bold;*/
+}
+
+.meta.brace.square,
+.meta.brace.round,
+.meta.brace.curly,
+.meta.group.braces.tex
+{
+  color: var(--stx-meta-brace);
+}
+
+/* KEYWORD */
+
+.keyword,
+.keyword.control.import,
+.keyword.control.import.from,
+.keyword.other.import,
+.keyword.control.at-rule.include,
+.keyword.control.at-rule.import,
+.keyword.control.class,
+.keyword.other.new,
+.keyword.other.special-method,
+.keyword.control.html.elements,
+.keyword.control.untitled,
+.keyword.other.special-method.ruby,
+.keyword.control.label.latex,
+.keyword.control.ref.latex
+{
+  color: var(--stx-keyword);
+}
+
+/* KEYWORD (OPERATORS) */
+
+.keyword.operator.comparison,
+.keyword.operator.assignment,
+.keyword.operator.arithmetic
+{
+  color: var(--stx-keyword);
+}
+
+/* PUNCTUATION */
+
+.punctuation.section,
+.punctuation.terminator,
+.punctuation.section.block,
+.punctuation.definition.parameters,
+.punctuation.section.group,
+.punctuation.definition.variable,
+.punctuation.definition.tag.html,
+.punctuation.definition.tag.begin,
+.punctuation.definition.tag.end,
+.punctuation.separator.continuation,
+.punctuation.separator.key-value,
+.punctuation.definition.string,
+.punctuation.section.brackets,
+.punctuation.separator.key-value.html,
+.punctuation.definition.group.begin,
+.punctuation.definition.group.end,
+.punctuation.section.group.tex,
+.punctuation.definition.arguments.begin.latex,
+.punctuation.definition.arguments.end.latex,
+.punctuation.definition.arguments.latex,
+.punctuation.definition.constant.math.tex,
+.punctuation.definition.string.begin.tex,
+.punctuation.definition.string.end.tex,
+.punctuation.definition.logical-expression.shell,
+.punctuation.definition.heading.markdown
+{
+  color: var(--stx-punctuation);
+}
+
+.entity.name,
+.entity.name.class,
+.entity.name.type.class,
+.entity.name.function,
+.entity.other.attribute-name,
+.entity.other.inherited-class,
+.entity.name.section,
+.entity.name.tag,
+.entity.name.tag.css,
+.entity.name.tag.scss,
+.entity.other.attribute-name.class,
+.entity.other.attribute-name.id,
+.entity.other.attribute-name.pseudo-element,
+.entity.other.attribute-name.tag.pseudo-element,
+.entity.other.attribute-name.pseudo-class,
+.entity.other.attribute-name.tag.pseudo-class,
+.entity.other.attribute-name.html,
+.entity.other.attribute-name,
+.entity.name.function.preprocessor.c,
+.entity.name.filename.find-in-files
+{
+  color: var(--stx-entity);
+}
+
+/*
+.source.less {
+ color: #b58900;
+}
+.source.sass {
+ color: #b58900;
+}
+.source.js.embedded.html {
+ color: #657b83;
+}
+
+.invalid {
+ background-color: #ec9489;
+}
+
+.other.package.exclude {
+ color: #dc322f;
+}
+.other.remove {
+ color: #dc322f;
+}
+.other.add {
+ color: #2aa198;
+}
+
+.markup.deleted {
+  color: #dc322f;
+}
+.markup.changed {
+  color: #2aa198;
+}
+.markup.inserted {
+  color: #859900;
+}
+.markup.heading {
+  color: #b58900;
+}
+.markup.quote {
+  color: #859900;
+}
+*/
+
+.markup.italic {
+  font-style: italic;
+}
+.markup.bold {
+  font-weight: bold;
+}
+.markup.link.markdown {
+  text-decoration: underline;
+}
+
+/* CSS */
+.meta.property-value.css {
+  color: var(--stx-meta);
+}
